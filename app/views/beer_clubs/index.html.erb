@@ -1,28 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Beer clubs</h1>
-
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Founded</th>
-      <th>City</th>
-
+      <th> <%= link_to 'Name', beers_path(order:"name") %> </th>
+      <th> <%= link_to 'Style', beers_path(order:"style") %> </th>
+      <th> <%= link_to 'Brewery', beers_path(order:"brewery") %> </th>
     </tr>
   </thead>
 
   <tbody>
-    <% @beer_clubs.each do |beer_club| %>
+    <% @beers.each do |beer| %>
       <tr>
-        <td><%= link_to beer_club.name, beer_club %></td>
-        <td><%= beer_club.founded %></td>
-        <td><%= beer_club.city %></td>
+        <td><%= link_to beer.name, beer %></td>
+        <td><%= link_to beer.style, beer.style %></td>
+        <td><%= link_to beer.brewery.name, beer.brewery %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Create a new club', new_beer_club_path %>
