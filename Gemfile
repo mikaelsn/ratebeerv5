@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'selenium-webdriver' 
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -10,6 +12,11 @@ end
 group :production do
    gem 'pg'
    gem 'rails_12factor' 
+end
+
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
 end
 
 # Use SCSS for stylesheets
@@ -49,6 +56,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner', '< 1.1.0'
   gem 'rspec-rails', '~> 2.14.1'
   gem 'factory_girl_rails'
   gem 'capybara'
