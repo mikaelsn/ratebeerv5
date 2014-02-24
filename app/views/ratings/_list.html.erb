@@ -1,0 +1,5 @@
+<ul>
+  <% ratings.each do |rating| %>
+        <li><%= rating.beer %> <%= rating.score %> <%= link_to rating.user.username, rating.user %> </li>
+  <% end %>
+</ul>

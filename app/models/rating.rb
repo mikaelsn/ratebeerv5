@@ -9,4 +9,9 @@ class Rating < ActiveRecord::Base
   def to_s
     "#{beer.name} #{score}"
   end
+
+   def self.recent(n)
+  	sorted_by_newest = Rating.all.reverse
+  	sorted_by_newest.take(5)
+  end
 end

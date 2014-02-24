@@ -1,11 +1,13 @@
-<h2>List of ratings</h2>
+<h2>Rating statistics</h2>
+<br>
+
+<h3>Top three beers:</h3>
+<%= render 'top3', given: @top_beers %>
+
+<h3>Top three breweries:</h3>
+<%= render 'top3', given: @top_breweries %>
+
+<h3>Recent ratings:</h3>
+<%= render 'list', ratings: @recent_ratings %>
 
 <p>Number of ratings <%= @ratings.count %></p>
-
-<ul>
-  <% @ratings.each do |rating| %>
-      <li> <%= rating %> <%= link_to rating.user.username, rating.user %> </li>
-  <% end %>
-</ul>
-
-
